@@ -45,6 +45,21 @@ html {
   --darkMode-textColor: var(--grey-50);
   --darkMode-transition: color 0.3s ease-in-out,
     background-color 0.3s ease-in-out;
+
+  --view-width: 90vw;
+  --fixed-width: 600px;
+  --max-width: 1120px;
+
+  --transition: 0.3s ease-in-out all;
+
+  /* box shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .dark-theme {
@@ -77,6 +92,26 @@ h5 {
   text-transform: capitalize;
 }
 
+h1 {
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -86,4 +121,83 @@ ul {
   padding: 0;
 }
 
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  border-top: 8px solid var(--primary-500);
+  border-bottom: 8px solid var(--primary-500);
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spinner 1s linear infinite;
+}
+
 /* ============= PROJECT CSS =============== */
+
+.page {
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.btn {
+  background-color: var(--primary-500);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  color: white;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border-color: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+
+  &.btn-block {
+    width: 100%;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow-2);
+  max-width: var(--fixed-width);
+  margin: 0 auto;
+
+  .form-row {
+    margin-bottom: 1rem;
+
+    .form-label {
+      display: block;
+      text-transform: capitalize;
+      margin-bottom: 0.35rem;
+      font-size: 0.8rem;
+    }
+
+    .form-input {
+      background-color: var(--grey-100);
+      border: 1px solid var(--grey-200);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem 0.25rem;
+      font-size: 1rem;
+    }
+  }
+}
